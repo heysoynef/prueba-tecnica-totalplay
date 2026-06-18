@@ -1,0 +1,242 @@
+[
+  {
+    "id": "5dc80b21-316a-4a56-93d2-14714d051de2",
+    "title": "THE BOY THE MOLE THE FOX AND THE HORSE",
+    "isbn": "9780062976581",
+    "authorId": "8b6b4c79-9323-4592-bb03-54fd9141ac33",
+    "pages": 128,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780062976581-M.jpg"
+  },
+  {
+    "id": "5db16dcb-925b-4b88-b94e-1c623e279b8b",
+    "title": "CIEN ANOS DE SOLEDAD",
+    "isbn": "9780307474728",
+    "authorId": "44d62e9a-1e95-4cbd-b088-b01094e3daed",
+    "pages": 417,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780307474728-M.jpg"
+  },
+  {
+    "id": "ec2557e2-654c-4b19-8e8d-651b253be984",
+    "title": "TO KILL A MOCKINGBIRD",
+    "isbn": "9780061120084",
+    "authorId": "2e9b8d79-2233-4d32-b402-b7a504b77c85",
+    "pages": 336,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780061120084-M.jpg"
+  },
+  {
+    "id": "c8621f82-0b64-4504-a49b-c4486ae17d84",
+    "title": "THE GREAT GATSBY",
+    "isbn": "9780743273565",
+    "authorId": "e2c6cfb1-64be-4db6-888b-f3f76f16adf6",
+    "pages": 180,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780743273565-M.jpg"
+  },
+  {
+    "id": "19f3f51c-953d-43a5-b264-9614b6a75e40",
+    "title": "PRIDE AND PREJUDICE",
+    "isbn": "9780141439518",
+    "authorId": "a4638837-c597-4471-9706-c17b528655ab",
+    "pages": 432,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780141439518-M.jpg"
+  },
+  {
+    "id": "955ab357-c2b3-4777-9ee2-b692c4949438",
+    "title": "JANE EYRE",
+    "isbn": "9780141441146",
+    "authorId": "0f6c14d4-7e38-4a32-9866-15dc08ccfbec",
+    "pages": 532,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780141441146-M.jpg"
+  },
+  {
+    "id": "9e1e6b40-2cf1-4c57-b126-989f421d8f4d",
+    "title": "WUTHERING HEIGHTS",
+    "isbn": "9780141439556",
+    "authorId": "b3d5967e-63fd-4d82-bdbf-c9d72675a3d1",
+    "pages": 416,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780141439556-M.jpg"
+  },
+  {
+    "id": "5248810d-b5c1-4430-a0a8-f35b4ef3a673",
+    "title": "MOBY DICK",
+    "isbn": "9781503280786",
+    "authorId": "92e9f7b8-0e73-41a4-a4eb-8365fe19c07c",
+    "pages": 378,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781503280786-M.jpg"
+  },
+  {
+    "id": "55036cb7-08a7-4da1-8620-e30d3c8ff4d0",
+    "title": "WAR AND PEACE",
+    "isbn": "9781400079988",
+    "authorId": "216f6c69-d337-4ae3-bd43-46dc4dbd0a86",
+    "pages": 1296,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400079988-M.jpg"
+  },
+  {
+    "id": "4277b0a9-26c2-4828-bcf0-ae3f5f73b6ae",
+    "title": "CRIME AND PUNISHMENT",
+    "isbn": "9780140449136",
+    "authorId": "8cd72224-a3ed-43c9-9abc-c061f74bcf89",
+    "pages": 671,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780140449136-M.jpg"
+  },
+  {
+    "id": "10b92142-fb34-4d5f-8212-7b43165569ef",
+    "title": "THE BROTHERS KARAMAZOV",
+    "isbn": "9780374528379",
+    "authorId": "8cd72224-a3ed-43c9-9abc-c061f74bcf89",
+    "pages": 824,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780374528379-M.jpg"
+  },
+  {
+    "id": "f73ae51e-90a5-4ccc-a65f-a0b0f662ba72",
+    "title": "DON QUIXOTE",
+    "isbn": "9780060934347",
+    "authorId": "765df854-bb1b-4753-b130-bd9743fa92b4",
+    "pages": 992,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780060934347-M.jpg"
+  },
+  {
+    "id": "2ed38f90-bf59-4e84-a7d7-8912b0b44292",
+    "title": "THE HOBBIT",
+    "isbn": "9780547928227",
+    "authorId": "ccefe8b1-5413-47f4-8d8e-052fba8dcb5a",
+    "pages": 300,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780547928227-M.jpg"
+  },
+  {
+    "id": "03440e53-f53f-45c8-b25a-21bad32c7f13",
+    "title": "THE FELLOWSHIP OF THE RING",
+    "isbn": "9780547928210",
+    "authorId": "ccefe8b1-5413-47f4-8d8e-052fba8dcb5a",
+    "pages": 432,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780547928210-M.jpg"
+  },
+  {
+    "id": "a60ad9ef-a128-4a37-9c91-914b7088fbb1",
+    "title": "DUNE",
+    "isbn": "9780441172719",
+    "authorId": "5bd095a6-7e5b-44af-a021-6309accd8582",
+    "pages": 896,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780441172719-M.jpg"
+  },
+  {
+    "id": "6fe589fd-3148-4fa6-998c-a22f8a7cae11",
+    "title": "FAHRENHEIT",
+    "isbn": "9781451673319",
+    "authorId": "7ee79506-03c4-4f7d-8a76-56d680b450ba",
+    "pages": 249,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781451673319-M.jpg"
+  },
+  {
+    "id": "fc1d8447-5e0f-4957-8d15-9d9da0433504",
+    "title": "BRAVE NEW WORLD",
+    "isbn": "9780060850524",
+    "authorId": "49c5abdc-29d5-4fd2-a84b-9e2b0ab7598e",
+    "pages": 288,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780060850524-M.jpg"
+  },
+  {
+    "id": "092f2bfb-d2d7-432e-ae9a-6ca62b379d02",
+    "title": "THE ALCHEMIST",
+    "isbn": "9780062315007",
+    "authorId": "1af5af6b-9e68-4785-9f67-1b2c42f19bc7",
+    "pages": 208,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780062315007-M.jpg"
+  },
+  {
+    "id": "ac82365d-c9db-494f-b4f5-4e44dbd03003",
+    "title": "THE NAME OF THE ROSE",
+    "isbn": "9780544176560",
+    "authorId": "b1420ebe-42c9-4436-8dc7-30d2dad66969",
+    "pages": 592,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780544176560-M.jpg"
+  },
+  {
+    "id": "4d0b2180-d4d6-4c77-b675-2a52952e5438",
+    "title": "THE SHADOW OF THE WIND",
+    "isbn": "9780143034902",
+    "authorId": "73e06f0e-172e-4d5c-9b26-c4b016292997",
+    "pages": 487,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780143034902-M.jpg"
+  },
+  {
+    "id": "51ad5c3a-3d3e-4a13-aa6d-7598a9a860a7",
+    "title": "THE KITE RUNNER",
+    "isbn": "9781594631931",
+    "authorId": "5b8417dc-fc4b-450b-84a4-80beb9db2df4",
+    "pages": 371,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781594631931-M.jpg"
+  },
+  {
+    "id": "c762612d-3e45-4339-9a3c-210013e95f8a",
+    "title": "LIFE OF PI",
+    "isbn": "9780156027328",
+    "authorId": "2851d726-eb3a-4d57-935a-b45e69d945f0",
+    "pages": 319,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780156027328-M.jpg"
+  },
+  {
+    "id": "4c10e71d-9148-4e92-b29a-1469f8110e2d",
+    "title": "THE BOOK THIEF",
+    "isbn": "9780375842207",
+    "authorId": "8709f6c9-bdb2-46e9-9ba9-181d68d064b3",
+    "pages": 576,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780375842207-M.jpg"
+  },
+  {
+    "id": "a0d0b038-f7c6-4187-88d0-9c50a2d51b67",
+    "title": "NEVER LET ME GO",
+    "isbn": "9781400078776",
+    "authorId": "8415e717-f54f-496f-9574-49ec94377a24",
+    "pages": 288,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400078776-M.jpg"
+  },
+  {
+    "id": "201cbf4e-445f-49d4-92fe-229d12518385",
+    "title": "THE ROAD",
+    "isbn": "9780307387899",
+    "authorId": "ec1dc12b-fce1-4789-b3b4-82d24aabfd2a",
+    "pages": 287,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780307387899-M.jpg"
+  },
+  {
+    "id": "f86d3fb6-6292-4634-a97e-13c21c25556e",
+    "title": "BELOVED",
+    "isbn": "9781400033416",
+    "authorId": "8946c948-0d72-4038-9d33-4ac6d0379a5a",
+    "pages": 324,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400033416-M.jpg"
+  },
+  {
+    "id": "aa00d128-e32a-4f26-a4ea-3f6c4dde940c",
+    "title": "THE HANDMAIDS TALE",
+    "isbn": "9780385490818",
+    "authorId": "51e03a79-b8e7-4a08-9a18-a4d2d481e97c",
+    "pages": 311,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780385490818-M.jpg"
+  },
+  {
+    "id": "4fb35b6a-c250-4246-aa6e-e6d946c8e230",
+    "title": "THE SECRET HISTORY",
+    "isbn": "9781400031702",
+    "authorId": "921f5bb1-17ce-4ee6-9731-58a0b241b7b0",
+    "pages": 559,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781400031702-M.jpg"
+  },
+  {
+    "id": "60a18be7-ac61-45ed-92b4-8177f5d4941d",
+    "title": "THE HOUSE OF THE SPIRITS",
+    "isbn": "9781501117015",
+    "authorId": "88c2b88d-7a7b-448c-9df2-c1046d04e91e",
+    "pages": 448,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781501117015-M.jpg"
+  },
+  {
+    "id": "d2a5f81e-77f4-4d4d-8194-3d5808040f10",
+    "title": "PEDRO PARAMO",
+    "isbn": "9780802133908",
+    "authorId": "c38bdcb4-d3bc-41f2-99f5-43147b574725",
+    "pages": 124,
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9780802133908-M.jpg"
+  }
+]

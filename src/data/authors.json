@@ -1,0 +1,142 @@
+[
+  {
+    "id": "8b6b4c79-9323-4592-bb03-54fd9141ac33",
+    "name": "CHARLIE MACKESY",
+    "birthDate": "1962-12-11"
+  },
+  {
+    "id": "44d62e9a-1e95-4cbd-b088-b01094e3daed",
+    "name": "GABRIEL GARCIA MARQUEZ",
+    "birthDate": "1927-03-06"
+  },
+  {
+    "id": "2e9b8d79-2233-4d32-b402-b7a504b77c85",
+    "name": "HARPER LEE",
+    "birthDate": "1926-04-28"
+  },
+  {
+    "id": "e2c6cfb1-64be-4db6-888b-f3f76f16adf6",
+    "name": "F SCOTT FITZGERALD",
+    "birthDate": "1896-09-24"
+  },
+  {
+    "id": "a4638837-c597-4471-9706-c17b528655ab",
+    "name": "JANE AUSTEN",
+    "birthDate": "1775-12-16"
+  },
+  {
+    "id": "0f6c14d4-7e38-4a32-9866-15dc08ccfbec",
+    "name": "CHARLOTTE BRONTE",
+    "birthDate": "1816-04-21"
+  },
+  {
+    "id": "b3d5967e-63fd-4d82-bdbf-c9d72675a3d1",
+    "name": "EMILY BRONTE",
+    "birthDate": "1818-07-30"
+  },
+  {
+    "id": "92e9f7b8-0e73-41a4-a4eb-8365fe19c07c",
+    "name": "HERMAN MELVILLE",
+    "birthDate": "1819-08-01"
+  },
+  {
+    "id": "8cd72224-a3ed-43c9-9abc-c061f74bcf89",
+    "name": "FYODOR DOSTOYEVSKY",
+    "birthDate": "1821-11-11"
+  },
+  {
+    "id": "ccefe8b1-5413-47f4-8d8e-052fba8dcb5a",
+    "name": "J R R TOLKIEN",
+    "birthDate": "1892-01-03"
+  },
+  {
+    "id": "5bd095a6-7e5b-44af-a021-6309accd8582",
+    "name": "FRANK HERBERT",
+    "birthDate": "1920-10-08"
+  },
+  {
+    "id": "7ee79506-03c4-4f7d-8a76-56d680b450ba",
+    "name": "RAY BRADBURY",
+    "birthDate": "1920-08-22"
+  },
+  {
+    "id": "49c5abdc-29d5-4fd2-a84b-9e2b0ab7598e",
+    "name": "ALDOUS HUXLEY",
+    "birthDate": "1894-07-26"
+  },
+  {
+    "id": "1af5af6b-9e68-4785-9f67-1b2c42f19bc7",
+    "name": "PAULO COELHO",
+    "birthDate": "1947-08-24"
+  },
+  {
+    "id": "88c2b88d-7a7b-448c-9df2-c1046d04e91e",
+    "name": "ISABEL ALLENDE",
+    "birthDate": "1942-08-02"
+  },
+  {
+    "id": "216f6c69-d337-4ae3-bd43-46dc4dbd0a86",
+    "name": "LEO TOLSTOY",
+    "birthDate": "1828-09-09"
+  },
+  {
+    "id": "765df854-bb1b-4753-b130-bd9743fa92b4",
+    "name": "MIGUEL DE CERVANTES",
+    "birthDate": "1547-09-29"
+  },
+  {
+    "id": "b1420ebe-42c9-4436-8dc7-30d2dad66969",
+    "name": "UMBERTO ECO",
+    "birthDate": "1932-01-05"
+  },
+  {
+    "id": "73e06f0e-172e-4d5c-9b26-c4b016292997",
+    "name": "CARLOS RUIZ ZAFON",
+    "birthDate": "1964-09-25"
+  },
+  {
+    "id": "5b8417dc-fc4b-450b-84a4-80beb9db2df4",
+    "name": "KHALED HOSSEINI",
+    "birthDate": "1965-03-04"
+  },
+  {
+    "id": "2851d726-eb3a-4d57-935a-b45e69d945f0",
+    "name": "YANN MARTEL",
+    "birthDate": "1963-06-25"
+  },
+  {
+    "id": "8709f6c9-bdb2-46e9-9ba9-181d68d064b3",
+    "name": "MARKUS ZUSAK",
+    "birthDate": "1975-06-23"
+  },
+  {
+    "id": "8415e717-f54f-496f-9574-49ec94377a24",
+    "name": "KAZUO ISHIGURO",
+    "birthDate": "1954-11-08"
+  },
+  {
+    "id": "ec1dc12b-fce1-4789-b3b4-82d24aabfd2a",
+    "name": "CORMAC MCCARTHY",
+    "birthDate": "1933-07-20"
+  },
+  {
+    "id": "8946c948-0d72-4038-9d33-4ac6d0379a5a",
+    "name": "TONI MORRISON",
+    "birthDate": "1931-02-18"
+  },
+  {
+    "id": "51e03a79-b8e7-4a08-9a18-a4d2d481e97c",
+    "name": "MARGARET ATWOOD",
+    "birthDate": "1939-11-18"
+  },
+  {
+    "id": "921f5bb1-17ce-4ee6-9731-58a0b241b7b0",
+    "name": "DONNA TARTT",
+    "birthDate": "1963-12-23"
+  },
+  {
+    "id": "c38bdcb4-d3bc-41f2-99f5-43147b574725",
+    "name": "JUAN RULFO",
+    "birthDate": "1917-05-16"
+  }
+]
