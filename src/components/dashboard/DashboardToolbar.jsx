@@ -1,7 +1,21 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function DashboardToolbar({ activeTab, isImporting, search, selectedCount, onCreate, onDeleteSelected, onImportBooks, onSearch }) {
   const fileInputRef = useRef(null);
+  const [dotCount, setDotCount] = useState(1);
+
+  useEffect(() => {
+    if (!isImporting) {
+      setDotCount(1);
+      return undefined;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setDotCount((current) => (current === 3 ? 1 : current + 1));
+    }, 450);
+
+    return () => window.clearInterval(intervalId);
+  }, [isImporting]);
 
   return (
     <div className="mt-7 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -21,7 +35,7 @@ function DashboardToolbar({ activeTab, isImporting, search, selectedCount, onCre
           <>
             <button className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-line bg-white px-4 text-sm font-medium shadow-sm transition hover:bg-surface disabled:cursor-wait disabled:opacity-70" type="button" onClick={() => fileInputRef.current?.click()} disabled={isImporting}>
               <i data-lucide={isImporting ? "loader-2" : "download"} className={`h-4 w-4 ${isImporting ? "animate-spin" : ""}`} aria-hidden="true" />
-              {isImporting ? "Importando..." : "Importar"}
+              {isImporting ? `Importando${".".repeat(dotCount)}` : "Importar"}
             </button>
             <input ref={fileInputRef} className="hidden" type="file" accept=".csv,text/csv" onChange={onImportBooks} disabled={isImporting} />
           </>

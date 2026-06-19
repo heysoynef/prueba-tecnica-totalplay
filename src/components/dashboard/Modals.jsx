@@ -63,6 +63,20 @@ export function AuthorModal({ author, onClose, onSave }) {
   );
 }
 
+export function DeleteConfirmModal({ message, onCancel, onConfirm }) {
+  return (
+    <Modal title="Confirmar eliminación" onClose={onCancel}>
+      <div className="space-y-5">
+        <p className="text-sm text-muted">{message}</p>
+        <div className="flex justify-end gap-3 pt-2">
+          <button className="h-10 rounded-lg border border-line px-4 text-sm font-semibold hover:bg-surface" type="button" onClick={onCancel}>Cancelar</button>
+          <button className="h-10 rounded-lg bg-red-600 px-4 text-sm font-semibold text-white hover:bg-red-700" type="button" onClick={onConfirm}>Eliminar</button>
+        </div>
+      </div>
+    </Modal>
+  );
+}
+
 function Modal({ children, title, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/35 px-4 py-6">

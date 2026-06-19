@@ -9,7 +9,7 @@ import { sortRows } from "../utils/sort.js";
 import { normalizeText } from "../utils/text.js";
 import DashboardToolbar from "./dashboard/DashboardToolbar.jsx";
 import ImportSummary from "./dashboard/ImportSummary.jsx";
-import { BookModal, AuthorModal } from "./dashboard/Modals.jsx";
+import { BookModal, AuthorModal, DeleteConfirmModal } from "./dashboard/Modals.jsx";
 import PaginationBar from "./dashboard/PaginationBar.jsx";
 import SegmentedTabs from "./dashboard/SegmentedTabs.jsx";
 import { BooksTable, AuthorsTable } from "./dashboard/Tables.jsx";
@@ -32,6 +32,7 @@ function DashboardHome({ user, onLogout }) {
   const [notice, setNotice] = useState("");
   const [importSummary, setImportSummary] = useState(null);
   const [isImporting, setIsImporting] = useState(false);
+  const [deleteDialog, setDeleteDialog] = useState(null);
   const [view, setView] = useState("portal");
 
   const authorById = useMemo(() => new Map(authors.map((author) => [author.id, author])), [authors]);
@@ -142,37 +143,57 @@ function DashboardHome({ user, onLogout }) {
 
   function deleteBook(bookId) {
     if (isImporting) return;
-    if (!window.confirm("¿Eliminar este libro?")) return;
-    setBooks((currentBooks) => currentBooks.filter((book) => book.id !== bookId));
-    setSelectedRows((currentRows) => currentRows.filter((id) => id !== bookId));
-    showNotice("Libro eliminado.");
+    setDeleteDialog({ type: "book", ids: [bookId], message: "¿Eliminar este libro?" });
   }
 
   function deleteAuthor(authorId) {
     if (isImporting) return;
-    if (!window.confirm("¿Eliminar este autor y todos sus libros asociados?")) return;
-    setAuthors((currentAuthors) => currentAuthors.filter((author) => author.id !== authorId));
-    setBooks((currentBooks) => currentBooks.filter((book) => book.authorId !== authorId));
-    setSelectedRows((currentRows) => currentRows.filter((id) => id !== authorId));
-    showNotice("Autor eliminado junto con sus libros asociados.");
+    setDeleteDialog({ type: "author", ids: [authorId], message: "¿Eliminar este autor y sus libros asociados?" });
   }
 
   function deleteSelectedRows() {
     if (isImporting) return;
     if (selectedRows.length === 0) return;
+    const ids = [...selectedRows];
 
     if (activeTab === "books") {
-      if (!window.confirm(`¿Eliminar ${selectedRows.length} libro(s) seleccionado(s)?`)) return;
-      setBooks((currentBooks) => currentBooks.filter((book) => !selectedRows.includes(book.id)));
-      showNotice(`${selectedRows.length} libro(s) eliminado(s).`);
+      setDeleteDialog({ type: "books", ids, message: `¿Eliminar ${ids.length} libro(s) seleccionado(s)?` });
     } else {
-      if (!window.confirm(`¿Eliminar ${selectedRows.length} autor(es) seleccionado(s) y sus libros asociados?`)) return;
-      setAuthors((currentAuthors) => currentAuthors.filter((author) => !selectedRows.includes(author.id)));
-      setBooks((currentBooks) => currentBooks.filter((book) => !selectedRows.includes(book.authorId)));
-      showNotice(`${selectedRows.length} autor(es) eliminado(s) junto con sus libros asociados.`);
+      setDeleteDialog({ type: "authors", ids, message: `¿Eliminar ${ids.length} autor(es) seleccionado(s) y sus libros asociados?` });
+    }
+  }
+
+  function confirmDelete() {
+    if (!deleteDialog) return;
+    const { ids, type } = deleteDialog;
+
+    if (type === "book") {
+      setBooks((currentBooks) => currentBooks.filter((book) => !ids.includes(book.id)));
+      setSelectedRows((currentRows) => currentRows.filter((id) => !ids.includes(id)));
+      showNotice("Libro eliminado.");
     }
 
-    setSelectedRows([]);
+    if (type === "author") {
+      setAuthors((currentAuthors) => currentAuthors.filter((author) => !ids.includes(author.id)));
+      setBooks((currentBooks) => currentBooks.filter((book) => !ids.includes(book.authorId)));
+      setSelectedRows((currentRows) => currentRows.filter((id) => !ids.includes(id)));
+      showNotice("Autor eliminado junto con sus libros asociados.");
+    }
+
+    if (type === "books") {
+      setBooks((currentBooks) => currentBooks.filter((book) => !ids.includes(book.id)));
+      setSelectedRows([]);
+      showNotice(`${ids.length} libro(s) eliminado(s).`);
+    }
+
+    if (type === "authors") {
+      setAuthors((currentAuthors) => currentAuthors.filter((author) => !ids.includes(author.id)));
+      setBooks((currentBooks) => currentBooks.filter((book) => !ids.includes(book.authorId)));
+      setSelectedRows([]);
+      showNotice(`${ids.length} autor(es) eliminado(s) junto con sus libros asociados.`);
+    }
+
+    setDeleteDialog(null);
   }
 
   async function importBooks(event) {
@@ -271,6 +292,7 @@ function DashboardHome({ user, onLogout }) {
 
       {modal?.type === "books" ? <BookModal authors={authors} book={modal.item} onClose={() => setModal(null)} onSave={saveBook} /> : null}
       {modal?.type === "authors" ? <AuthorModal author={modal.item} onClose={() => setModal(null)} onSave={saveAuthor} /> : null}
+      {deleteDialog ? <DeleteConfirmModal message={deleteDialog.message} onCancel={() => setDeleteDialog(null)} onConfirm={confirmDelete} /> : null}
     </main>
   );
 }
