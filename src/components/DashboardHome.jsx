@@ -21,6 +21,7 @@ function DashboardHome({ user, onLogout }) {
   const [sortConfig, setSortConfig] = useState(null);
   const [modal, setModal] = useState(null);
   const [notice, setNotice] = useState("");
+  const [importSummary, setImportSummary] = useState(null);
   const [view, setView] = useState("portal");
   const fileInputRef = useRef(null);
 
@@ -60,6 +61,11 @@ function DashboardHome({ user, onLogout }) {
   function showNotice(message) {
     setNotice(message);
     window.setTimeout(() => setNotice(""), 4500);
+  }
+
+  function showImportSummary(summary) {
+    setImportSummary(summary);
+    window.setTimeout(() => setImportSummary(null), 7000);
   }
 
   function toggleAllVisible() {
@@ -140,6 +146,23 @@ function DashboardHome({ user, onLogout }) {
     showNotice("Autor eliminado junto con sus libros asociados.");
   }
 
+  function deleteSelectedRows() {
+    if (selectedRows.length === 0) return;
+
+    if (activeTab === "books") {
+      if (!window.confirm(`¿Eliminar ${selectedRows.length} libro(s) seleccionado(s)?`)) return;
+      setBooks((currentBooks) => currentBooks.filter((book) => !selectedRows.includes(book.id)));
+      showNotice(`${selectedRows.length} libro(s) eliminado(s).`);
+    } else {
+      if (!window.confirm(`¿Eliminar ${selectedRows.length} autor(es) seleccionado(s) y sus libros asociados?`)) return;
+      setAuthors((currentAuthors) => currentAuthors.filter((author) => !selectedRows.includes(author.id)));
+      setBooks((currentBooks) => currentBooks.filter((book) => !selectedRows.includes(book.authorId)));
+      showNotice(`${selectedRows.length} autor(es) eliminado(s) junto con sus libros asociados.`);
+    }
+
+    setSelectedRows([]);
+  }
+
   async function importBooks(event) {
     const file = event.target.files?.[0];
     event.target.value = "";
@@ -152,7 +175,7 @@ function DashboardHome({ user, onLogout }) {
     const text = await file.text();
     const result = await buildBooksFromCsv(text, authors);
     if (result.books.length > 0) setBooks((currentBooks) => [...result.books, ...currentBooks]);
-    showNotice(`Importación: ${result.books.length} libro(s) agregado(s), ${result.errors.length} fila(s) omitida(s).`);
+    showImportSummary({ correct: result.books.length, errors: result.errors.length });
   }
 
   function goToPage(nextPage) {
@@ -197,10 +220,17 @@ function DashboardHome({ user, onLogout }) {
         <SegmentedTabs activeTab={activeTab} onChange={changeTab} />
 
         {notice ? <div className="mt-6 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800">{notice}</div> : null}
+        {importSummary ? <ImportSummary correct={importSummary.correct} errors={importSummary.errors} /> : null}
 
         <div className="mt-7 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <SearchBox activeTab={activeTab} search={search} onSearch={setSearch} />
           <div className="flex flex-wrap items-center gap-3">
+            {selectedRows.length > 0 ? (
+              <button className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-red-200 bg-red-50 px-4 text-sm font-medium text-red-700 shadow-sm transition hover:bg-red-100" type="button" onClick={deleteSelectedRows}>
+                <i data-lucide="trash-2" className="h-4 w-4" aria-hidden="true" />
+                Eliminar seleccionados
+              </button>
+            ) : null}
             <button className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-line bg-white px-4 text-sm font-medium shadow-sm transition hover:bg-surface" type="button" onClick={() => setModal({ type: activeTab, mode: "create" })}>
               <i data-lucide="plus" className="h-4 w-4" aria-hidden="true" />
               Nuevo
@@ -235,6 +265,28 @@ function DashboardHome({ user, onLogout }) {
       {modal?.type === "books" ? <BookModal authors={authors} book={modal.item} onClose={() => setModal(null)} onSave={saveBook} /> : null}
       {modal?.type === "authors" ? <AuthorModal author={modal.item} onClose={() => setModal(null)} onSave={saveAuthor} /> : null}
     </main>
+  );
+}
+
+function ImportSummary({ correct, errors }) {
+  const hasErrors = errors > 0;
+  const toneClasses = hasErrors
+    ? "border-amber-200 bg-amber-50 text-amber-900"
+    : "border-emerald-200 bg-emerald-50 text-emerald-900";
+
+  return (
+    <div className={`mt-6 rounded-lg border px-4 py-3 ${toneClasses}`}>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-sm font-semibold">Importación completada</p>
+          <div className="mt-2 flex flex-wrap gap-4 text-sm">
+            <span>Correctos: <strong>{correct}</strong></span>
+            <span>Con error: <strong>{errors}</strong></span>
+          </div>
+        </div>
+        <i data-lucide={hasErrors ? "triangle-alert" : "check-circle-2"} className="h-5 w-5 shrink-0" aria-hidden="true" />
+      </div>
+    </div>
   );
 }
 
