@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { cleanIsbn, fetchCoverUrl, isValidIsbnChecksum } from "../utils/isbn.js";
 import { AppFooter } from "./RequirementsPage.jsx";
 
 const SEARCH_QUERIES = [
@@ -49,7 +50,7 @@ function IsbnPage({ onBack, onOpenChecklist }) {
 
     setLoading(true);
     const valid = isValidIsbnChecksum(cleaned);
-    const coverUrl = await fetchCoverUrl(cleaned);
+    const coverUrl = await fetchCoverUrl(cleaned, "");
     setResult({
       valid,
       coverFound: Boolean(coverUrl),
@@ -204,35 +205,6 @@ function shuffle(items) {
     [nextItems[index], nextItems[randomIndex]] = [nextItems[randomIndex], nextItems[index]];
   }
   return nextItems;
-}
-
-function cleanIsbn(value) {
-  return String(value || "").replace(/[^0-9Xx]/g, "").toUpperCase();
-}
-
-function isValidIsbnChecksum(isbn) {
-  if (/^\d{13}$/.test(isbn)) {
-    const sum = isbn.split("").reduce((total, digit, index) => total + Number(digit) * (index % 2 === 0 ? 1 : 3), 0);
-    return sum % 10 === 0;
-  }
-
-  if (/^\d{9}[\dX]$/.test(isbn)) {
-    const sum = isbn.split("").reduce((total, digit, index) => total + (digit === "X" ? 10 : Number(digit)) * (10 - index), 0);
-    return sum % 11 === 0;
-  }
-
-  return false;
-}
-
-async function fetchCoverUrl(isbn) {
-  try {
-    const response = await fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json`);
-    const data = await response.json();
-    const details = data[`ISBN:${isbn}`];
-    return details?.thumbnail_url?.replace("-S.", "-M.") || `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
-  } catch {
-    return "";
-  }
 }
 
 export default IsbnPage;
